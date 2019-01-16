@@ -3,8 +3,34 @@
 
 .navbar {
   background: image_url('darkness.png');
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
-  color: #FFFFFF;
   font-family: "Helvetica Neue", Helvetica;
-  font-weight: 500;
+  font-weight: 800;
+}
+
+.hero {
+  background: image_url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 400px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+  margin: 0;
+}
+
+.frosty {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+
+.frosty h2 {
+  font-weight: 200;
+}
+
+.btn {
+  border-radius: 0;
 }
