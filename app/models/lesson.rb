@@ -5,3 +5,7 @@ class Lesson < ApplicationRecord
   include RankedModel
   ranks :row_order, with_same: :section_id
 end
+
+
+
+
