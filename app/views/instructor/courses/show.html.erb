@@ -35,31 +35,26 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class"text-center"><%= current_course.title %></h1>
   <%= image_tag current_course.image.url, class: 'img-fluid' %>
-  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
-  <br class="clr" />
 
-<div class="text-center">
-    
-<!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
-      Add a section
-    </button>
+  <div class="text-center">
+  <!-- Button trigger modal -->
+   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+        Add a section
+   </button>
+  </div>
+
 
   <ul class="sections">
     <% current_course.sections.rank(:row_order).each do |section| %>
-      <li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
-        <div class="header">
+      <li data-update-url="<%= instructor_section_path section %>" class="section-li">
+        <div class="header float-left">
           <span class="fa fa-ellipsis-v"></span>
           <%= section.title %>
         </div>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
-          New Lesson...
+                  New Lesson...
         </button>
-
-
-        
-
 
         <br class="clr"/>
         <br class="clr"/>
@@ -93,6 +88,10 @@
 </div>
 
 
+  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
+  <br class="clr" />
+
+
     <!-- Modal -->
     <div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -110,8 +109,8 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <%= f.submit "Add a section", class: 'btn btn-primary' %>
+            </div>
           <% end %>
-          </div>
         </div>
       </div>
     </div>
